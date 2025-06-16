@@ -136,3 +136,28 @@ function EmployeeList() {
       .then(res => setEmployees(res.data))
       .catch(err => console.error(err));
   }, []);
+return (
+    <div>
+      <h2>Employees</h2>
+      <ul>
+        {employees.map(emp => (
+          <li key={emp._id}>{emp.name} — {emp.email}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+🚀 4. Run Everything
+Backend
+# In /employee-management-backend
+node app.js
+Frontend
+# In /employee-management-frontend
+npm start
+
+✅ 5. Extra Suggestions
+Use form libraries like react-hook-form.
+Use Yup for frontend validation.
+Add protected routes using React Router.
+Deploy with Vercel (frontend) and Render/Heroku (backend).
